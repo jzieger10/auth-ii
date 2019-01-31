@@ -20,6 +20,11 @@ class Users extends React.Component {
 		}
 	}
 
+	logOut = () => {
+		window.localStorage.removeItem("username");
+		window.location.reload();
+	};
+
 	render() {
 		return (
 			<div>
@@ -31,7 +36,9 @@ class Users extends React.Component {
 						</li>
 					))}
 				</ul>
-				<button className="logout-button">Log Out</button>
+				<button className="logout-button" onClick={this.logOut}>
+					Log Out
+				</button>
 			</div>
 		);
 	}

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Route, Link } from "react-router-dom";
 import Users from "./Components/Users/Users";
 import Login from "./Components/Auth/Login";
+import Register from "./Components/Auth/Register";
 import "./App.css";
 
 class App extends Component {
@@ -11,12 +12,14 @@ class App extends Component {
 				<header>
 					<nav>
 						<Link to="/login">Log In</Link>
+						<Link to="/register">Register List</Link>
 						<Link to="/users">User List</Link>
 					</nav>
 				</header>
 				<div className="container">
-					<Route path="/login" component="Login" />
-					<Route path="/users" component="Users" />
+					<Route path="/login" component={Login} />
+					<Route path="/users" component={Users} />
+					<Route path="/register" component={Register} />
 				</div>
 			</div>
 		);
